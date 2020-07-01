@@ -1,0 +1,1 @@
+java -Xms1m  src/jvmperf/sawtooth/Sawtooth > res.csv

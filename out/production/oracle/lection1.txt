@@ -1,0 +1,74 @@
+part2
+
+Производительность характеризуется:
+    1) Пропускная способность
+    2) Скорость отклика
+    3) объем потребляемых ресурсов
+
+
+> java -version
+java version "1.8.0_202"
+Java(TM) SE Runtime Environment (build 1.8.0_202-b08)
+Java HotSpot(TM) 64-Bit Server VM (build 25.202-b08, mixed mode)
+
+клиентский режим работы: ресурсы не ограничены
+серверный (Server VM): аггресивная оптимизация ресурсов
+
+
+> jps
+29953 GradleDaemon
+29890
+34210 Jps
+31383 Launcher
+
+под каждый джава процесс выделяется своя виртуальная машина, машины делят ресусры
+
+
+jit компилятор, как правило подключается при многкратном вызове одинх и тех же классов(?), например 50000 раз
+
+
+(книга postgresql 10 high performance (подходит иногда для всех субд))
+
+
+java Mission control (jmc),  fly(?) recorder - анализ jvm
+
+
+lab1:
+
+>javac AllocationOverwrite.java
+>java verbose:gc AllocationOverwrite
+
+
+>javac TrivialOOm.java
+>java -Xmx13m TrivialOOm
+ok
+>java -Xmx12m TrivialOOm
+java.lang.OutOfMemory: Java heap size
+
+
+>javac SlowFinalizer.java
+>java -Xmx64 SlowFinalizer
+Exception in thread main
+OutOfMemory
+
+в блоке finalize можно воскрешать объект, например присвоить сильной ссылке this. Также finalize вызывается только один раз, тогда как gc может подходить несколько раз
+
+
+
+
+-XX:+UseConcMarkSweepGC -замена gc
+
+
+part3
+
+
+hotspot vm garbage collection tuning guid - только для java 9
+
+
+
+
+Angelika Langer - лекции по vm (the art of garbage collector ... )
+
+understanding jit compilation (oracle website, july 2014)
+
+hirt.se/blog/ jmc tutorial

@@ -1,0 +1,73 @@
+java8
+
+        лямбды
+        классы по работе с датами (https://docs.oracle.com/javase/8/docs/api/) класс Date mutable
+            книга Хорстмана Figure 4.5
+            рекомендация для работы с датами в пакете java.time
+
+        nosehorn (8-11), graal( с 11) - работа с javascript
+
+java 9
+
+        модульность (jpms)
+        sun.misc.Unsafe
+
+
+
+до января 2019:
+    java  была стабильна (обратная совместимость), безопасна (приходят "заплатки" на старые версии), свободное распространение
+Стало:
+    java 11  - LTS (long term support) until sept 2026,
+
+jdk8 - прекращена поддержка, кроме коммерческих версий
+
+java8 - март 2025 прекратится выпуск публичных апдейтов
+
+
+since java 11
+        open jdk == oracle jdk
+        removed:
+            applets
+            java web start
+            javaFX
+            browser plugin
+
+
+
+since java9
+    - очистка jdk от мусора
+    - удалили jhat tool
+    - gc options
+    "чем меньше профилируем jvm, тем лучше она работает"
+
+
+since 11
+    CMS GC
+    обратной совместимости нет (удалили deprecated методы)
+
+
+
+
+https://blogs.oracle.com/oraclemagazine/all-issues
+http://igor.host/fors/
+
+
+java 11 в коммерческих целях бесплатно нельзя, только openjdk
+
+
+
+сейчас работают над:
+    amber
+    valhalla (введен новый тип value type)
+    loom (новые threads )
+    metropolis
+
+    jdk 12
+        сырые строки, строки можно брать одинарные ковычки
+        heardocs
+
+    новый switch, case
+
+
+
+
